@@ -1,46 +1,39 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>LUGALO vs MAPEMBELO</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0a0a0a;color:#fff;font-family:sans-serif;text-align:center}
-h1{color:#ff3300;padding:20px;font-size:32px}
-img{width:100%;max-width:500px;border-radius:15px;border:2px solid #333}
-.box{display:flex;justify-content:center;gap:10px;padding:20px;background:#111;margin:15px;border-radius:10px}
-.b{background:#1e1e1e;padding:10px;border-radius:10px;min-width:70px}
-.b span{display:block;font-size:30px;font-weight:bold;color:#ff4000}
-.btn{background:#25D366;color:#fff;border:none;padding:15px 30px;border-radius:30px;font-size:18px;font-weight:bold;margin:15px;width:90%;max-width:400px}
-.loc{background:#1a1a1a;margin:15px;padding:15px;border-radius:10px;border:1px solid #333}
+body{background:#0a0a0a;color:#fff;font-family:system-ui;text-align:center}
+.hero{padding:18px;background:linear-gradient(180deg,#1a0000,#000);border-bottom:2px solid #ff3c00}
+.hero h1{font-size:32px;color:#ff3c00}
+.poster-box{padding:15px}
+.poster-box img{width:100%;max-width:400px;border-radius:16px;border:2px solid #333}
+.score-board{background:radial-gradient(#222,#000);padding:30px 15px;display:flex;justify-content:space-between;align-items:center;border-top:2px solid #ff3c00;border-bottom:2px solid #ff3c00}
+.team{font-weight:900;font-size:20px}
+.score{font-size:80px;font-weight:900;text-shadow:0 0 20px #ff0000}
+.vs{color:#666;font-size:24px;margin-top:5px}
+.whatsapp{background:#25D366;color:#fff;border:none;padding:16px 20px;border-radius:30px;font-size:18px;font-weight:bold;width:90%;max-width:400px;margin:20px auto;display:flex;align-items:center;justify-content:center;gap:10px}
+.location{background:#1a1a1a;border:1px solid #ff3c00;padding:15px;border-radius:16px;width:90%;max-width:400px;margin:10px auto}
 </style>
 </head>
 <body>
-<h1>🔥 MATCH DAY 🔥</h1>
-<img src="poster.jpg" alt="Poster">
-<div class="box">
-<div class="b"><span id="d">00</span>DAYS</div>
-<div class="b"><span id="h">00</span>HRS</div>
-<div class="b"><span id="m">00</span>MINS</div>
-<div class="b"><span id="s">00</span>SECS</div>
+<div class="hero"><h1>🔥 MATCH DAY 🔥</h1></div>
+<div class="poster-box"><img src="poster.jpg" alt="Lugalo vs Mapembelo" onerror="this.style.display='none'"></div>
+<div class="score-board">
+<div class="team">🦁<br>LUGALO<br>UNITED</div>
+<div><div class="score">0 - 0</div><div class="vs">VS</div></div>
+<div class="team">🐆<br>MAPEMBELO<br>FC</div>
 </div>
-<button class="btn" onclick="share()">💬 Share WhatsApp</button>
-<div class="loc">📍 Uwanja wa Lugalo Hospital<br>🕥 SAA 10:15 JIONI • TOMORROW<br><b>LUGALO UNITED vs MAPEMBELO FC</b></div>
+<div style="padding:20px"><div class="location">📍 <b>Uwanja wa Lugalo Hospital</b><br>LUGALO UNITED vs MAPEMBELO FC<br><b>SAA 10:15 JIONI</b></div></div>
+<button class="whatsapp" onclick="share()">💬 Share WhatsApp</button>
 <script>
-let t=new Date();t.setDate(t.getDate()+1);t.setHours(22,15,0,0);
-setInterval(()=>{
-let n=new Date();let x=t-n;if(x<0)x=0;
-let d=Math.floor(x/86400000);let h=Math.floor(x%86400000/3600000);
-let m=Math.floor(x%3600000/60000);let s=Math.floor(x%60000/1000);
-document.getElementById('d').textContent=String(d).padStart(2,'0');
-document.getElementById('h').textContent=String(h).padStart(2,'0');
-document.getElementById('m').textContent=String(m).padStart(2,'0');
-document.getElementById('s').textContent=String(s).padStart(2,'0');
-},1000);
 function share(){
-let u=location.href;
-window.open("https://wa.me/?text="+encodeURIComponent("🔥 MECHI KESHO! LUGALO vs MAPEMBELO 📍 Lugalo SAA 10:15 "+u));
+let text="🔥 MATCH DAY LEO! 🔥\nLUGALO UNITED 0 - 0 MAPEMBELO FC\n📍 Uwanja wa Lugalo Hospital\n🕥 SAA 10:15 JIONI\n"+window.location.href;
+window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");
 }
 </script>
 </body>
